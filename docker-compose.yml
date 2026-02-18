@@ -1,16 +1,22 @@
-
-version: '3.8'
-
 services:
     nginx:
         image: nginx:1.21.1
-        ports:
-            - "80:80"
+        expose:
+            - "80"
         volumes:
             - ./docker/nginx/default.conf:/etc/nginx/conf.d/default.conf
             - ./src:/var/www/
         depends_on:
             - php
+
+    front-nginx:
+         image: nginx:1.21.1
+         ports:
+          - "80:80"
+         volumes:
+          - ./docker/front-nginx/default.conf:/etc/nginx/conf.d/default.conf
+         depends_on:
+          - nginx
 
     php:
         build: ./docker/php

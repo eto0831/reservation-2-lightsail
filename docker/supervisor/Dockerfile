@@ -11,6 +11,7 @@ RUN apt-get update -o Acquire::http::Timeout="600" -o Acquire::Retries="5" \
       libpng-dev \
       tzdata \
       cron \
+  && docker-php-ext-install pdo_mysql \
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/*
 

@@ -1,4 +1,4 @@
-FROM php:7.4-fpm
+FROM php:8.1-fpm
 
 # 必要なツールと拡張機能をインストール
 RUN apt-get update -o Acquire::http::Timeout="600" -o Acquire::Retries="5" \

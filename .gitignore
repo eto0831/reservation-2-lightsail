@@ -18,4 +18,5 @@
 /src/.idea
 /src/.vscode
 /docker/mysql/data
-src/supervisord.log
+/src/supervisord.log
+/src/supervisord.pid
